@@ -37,6 +37,9 @@ graph TD
     B --> C[Persistence Layer]
     D[DTOs] --> A
     B --> D
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#dfd,stroke:#333,stroke-width:2px
 ```
 
 - **🖥️ Presentation Layer**: REST Controllers & API Endpoints
