@@ -1,13 +1,10 @@
 package com.ouchin.ITLens.entity;
 
-import com.ouchin.ITLens.entity.enums.QuestionType;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.ArrayList;
 import java.util.List;
 
-// update her
 
 @Entity
 @Data
@@ -21,7 +18,7 @@ public class Question {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "subject_id")
-    private Subject subject;  // Linking questions directly to sub-subjects
+    private Subject subject;
 
     @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Answer> answers;

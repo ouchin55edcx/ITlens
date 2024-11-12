@@ -16,9 +16,9 @@ public class QuestionRequestDto {
     private String type;
 
     @NotNull(message = "Subject ID is required")
-    private Long subjectId;  // Subject ID should point to a SubSubject in the database
+    private Long subjectId;
 
     @NotEmpty(message = "At least one answer is required")
-    private List<AnswerRequestDto> answers;  // List of answers, assumed to be required
+    private List<AnswerRequestDto> answers;
 }
 

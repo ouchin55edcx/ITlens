@@ -9,10 +9,10 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring", uses = {AnswerMapper.class})
 public interface QuestionMapper {
 
-    @Mapping(source = "subjectId", target = "subject.id")  // Map subjectId to the subject entity
+    @Mapping(source = "subjectId", target = "subject.id")
     Question toEntity(QuestionRequestDto dto);
 
-    @Mapping(source = "subject.id", target = "subjectId")  // Map subject entity to subjectId in response DTO
+    @Mapping(source = "subject.id", target = "subjectId")
     QuestionResponseDto toResponseDto(Question question);
 }
 

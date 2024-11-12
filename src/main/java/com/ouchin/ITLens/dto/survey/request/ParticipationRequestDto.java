@@ -20,7 +20,6 @@ public class ParticipationRequestDto {
         private Long questionId;
         private List<String> answerIds;
 
-        // Getters and Setters for questionId and answerIds
 
         public Long getQuestionId() {
             return questionId;

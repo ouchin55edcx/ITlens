@@ -11,6 +11,6 @@ public class QuestionResponseDto {
     private Long id;
     private String text;
     private String type;
-    private Long subjectId;  // ID of the SubSubject where the question is located
-    private List<AnswerResponseDto> answers;  // List of answers for this question
+    private Long subjectId;
+    private List<AnswerResponseDto> answers;
 }

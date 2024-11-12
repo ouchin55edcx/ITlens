@@ -35,10 +35,8 @@ public class QuestionServiceImpl implements QuestionService {
     @Override
     @Transactional
     public QuestionResponseDto createQuestion(QuestionRequestDto dto) {
-        // Convert DTO to Question entity
         Question question = questionMapper.toEntity(dto);
 
-        // Save the Question entity and return the response DTO
         question = questionRepository.save(question);
         return questionMapper.toResponseDto(question);
     }
@@ -46,44 +44,36 @@ public class QuestionServiceImpl implements QuestionService {
     @Override
     @Transactional
     public QuestionResponseDto updateQuestion(Long id, QuestionRequestDto dto) {
-        // Find the Question by ID
         Question question = questionRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Question not found"));
 
-        // Update fields in the question
         question.setText(dto.getText());
         question.setType(dto.getType());
 
-        // Save the updated Question and return the response DTO
         return questionMapper.toResponseDto(questionRepository.save(question));
     }
 
     @Override
     public void deleteQuestion(Long id) {
-        // Delete the Question by ID
         questionRepository.deleteById(id);
     }
 
     @Override
     @Transactional
     public QuestionResponseDto addAnswer(Long questionId, String answerText) {
-        // Find the Question by ID
         Question question = questionRepository.findById(questionId)
                 .orElseThrow(() -> new EntityNotFoundException("Question not found"));
 
-        // Create and link the new Answer to the Question
         Answer answer = new Answer();
         answer.setText(answerText);
         answer.setQuestion(question);
         answerRepository.save(answer);
 
-        // Return the updated Question DTO with the added answer
         return questionMapper.toResponseDto(question);
     }
 
     @Override
     public List<QuestionResponseDto> findQuestionsBySubjectId(Long subjectId) {
-        // Fetch questions by subject ID from the repository
         List<Question> questions = questionRepository.findBySubjectId(subjectId);
         return questions.stream()
                 .map(questionMapper::toResponseDto)

@@ -8,7 +8,6 @@ import java.util.List;
 
 public interface QuestionRepository extends JpaRepository<Question, Long> {
 
-    // New method to find questions by subject ID
     List<Question> findBySubjectId(Long subjectId);
 }
 

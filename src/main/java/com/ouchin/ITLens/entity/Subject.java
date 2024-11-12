@@ -26,12 +26,11 @@ public class Subject {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parent_subject_id")
-    private Subject parentSubject;  // null if this is a parent subject
+    private Subject parentSubject;
 
     @OneToMany(mappedBy = "parentSubject")
-    private List<Subject> subSubjects;  // Represents child subjects
+    private List<Subject> subSubjects;
 
-    // Modify this to represent only questions on subSubjects
     @OneToMany(mappedBy = "subject", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Question> questions;  // Questions for this subject will be for child subjects only
+    private List<Question> questions;
 }

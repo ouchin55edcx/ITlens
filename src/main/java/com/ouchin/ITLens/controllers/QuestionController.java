@@ -4,8 +4,6 @@ import com.ouchin.ITLens.dto.survey.request.AnswerRequestDto;
 import com.ouchin.ITLens.dto.survey.request.QuestionRequestDto;
 import com.ouchin.ITLens.dto.survey.response.QuestionResponseDto;
 import com.ouchin.ITLens.service.QuestionService;
-import jakarta.validation.Valid;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

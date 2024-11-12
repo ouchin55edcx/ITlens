@@ -1,13 +1,11 @@
 package com.ouchin.ITLens.controllers;
 
-import com.ouchin.ITLens.dto.survey.request.QuestionRequestDto;
 import com.ouchin.ITLens.dto.survey.request.SubjectRequestDto;
 import com.ouchin.ITLens.dto.survey.response.QuestionResponseDto;
 import com.ouchin.ITLens.dto.survey.response.SubjectResponseDto;
 import com.ouchin.ITLens.service.QuestionService;
 import com.ouchin.ITLens.service.SubjectService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -48,7 +46,6 @@ public class SubjectController {
 
     @GetMapping("/{id}/questions")
     public ResponseEntity<List<QuestionResponseDto>> getQuestionsBySubjectId(@PathVariable Long id) {
-        // You would need to implement the corresponding method in QuestionService to retrieve questions by subject ID
         return ResponseEntity.ok(questionService.findQuestionsBySubjectId(id));
     }
 
