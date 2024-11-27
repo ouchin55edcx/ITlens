@@ -45,7 +45,7 @@ graph TD
 - **📦 DTOs**: Data Transfer & Validation
 
 ## 📊 Class Diagram
-![Class Diagram](src/main/java/com/ouchin/ITLens/docs/img.png)
+![Class Diagram](docs/img.png)
 
 ## 🛠️ Tech Stack
 

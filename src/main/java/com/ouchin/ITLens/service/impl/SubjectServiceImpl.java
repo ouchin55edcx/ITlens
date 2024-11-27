@@ -48,6 +48,8 @@ public class SubjectServiceImpl implements SubjectService {
             Subject parentSubject = subjectRepository.findById(dto.getParentSubjectId())
                     .orElseThrow(() -> new ResourceNotFoundException("Parent Subject not found with id: " + dto.getParentSubjectId()));
             subject.setParentSubject(parentSubject);
+        }else {
+            subject.setParentSubject(null);
         }
 
         Subject savedSubject = subjectRepository.save(subject);
