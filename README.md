@@ -1,6 +1,8 @@
 <div align="center">
 
-# 🔍 ITLens Project
+# ITLens 🔍
+![img_1.png](docs/img_1.png)
+> An Advanced Survey Management System for Efficient Data Processing
 
 [![Java](https://img.shields.io/badge/Java-17%2B-orange.svg)](https://www.oracle.com/java/)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.2.0-brightgreen.svg)](https://spring.io/projects/spring-boot)
@@ -8,28 +10,38 @@
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Documentation](https://img.shields.io/badge/API-Swagger-85EA2D.svg)](swagger-ui.html)
 
-*An Advanced Survey Management System for Efficient Data Processing*
-
-[Quick Start](#-getting-started) • [API Docs](#-api--documentation) • [Features](#-key-features) • [Architecture](#-architecture)
+[Quick Start](#-getting-started) • [Features](#-features) • [API Documentation](#-api-documentation) • [Architecture](#-architecture)
 
 </div>
 
----
+## 🌟 Overview
 
-## 📑 Table of Contents
-- [Overview](#-overview)
-- [Architecture](#-architecture)
-- [Class Diagram](#-class-diagram)
-- [Tech Stack](#-tech-stack)
-- [API Documentation](#-api--documentation)
-- [Key Features](#-key-features)
-- [Getting Started](#-getting-started)
+**ITLens** is a cutting-edge survey management system built with Spring Boot, designed to streamline the process of creating, managing, and analyzing surveys. Our platform offers a powerful combination of flexibility and performance, making it ideal for organizations seeking robust data collection and analysis capabilities.
 
-## 🎯 Overview
-**ITLens** is a robust Spring Boot application designed to revolutionize survey management. It provides a seamless interface for handling survey data, subjects, and questionnaires with advanced features for data processing and analysis. The system's flexible architecture makes it adaptable across various survey domains while maintaining high performance and scalability.
+## ✨ Features
+
+### Core Capabilities
+- 📊 **Advanced Survey Management**
+    - Multi-version survey support
+    - Real-time data updates
+    - Comprehensive validation system
+    - Dynamic form generation
+
+- 🌳 **Intelligent Subject Organization**
+    - Hierarchical subject structure
+    - Custom categorization options
+    - Advanced recursive querying
+    - Flexible taxonomy management
+
+- 🛡️ **Enterprise-Grade Security**
+    - RESTful API security
+    - Input sanitization
+    - Comprehensive error handling
+    - Data validation
 
 ## 🏗️ Architecture
-The application implements a clean, layered architecture ensuring separation of concerns:
+
+ITLens follows a clean, layered architecture that ensures maintainability and scalability:
 
 ```mermaid
 graph TD
@@ -39,113 +51,114 @@ graph TD
     B --> D
 ```
 
-- **🖥️ Presentation Layer**: REST Controllers & API Endpoints
-- **⚙️ Business Layer**: Services & Business Logic
-- **💾 Persistence Layer**: Repositories & Data Access
-- **📦 DTOs**: Data Transfer & Validation
+### Layer Description
+- **Presentation Layer**: RESTful API endpoints and controllers
+- **Business Layer**: Core business logic and service implementations
+- **Persistence Layer**: Data access and repository management
+- **DTO Layer**: Data transfer objects for clean API communication
 
-## 📊 Class Diagram
-![Class Diagram](docs/img.png)
-
-## 🛠️ Tech Stack
+## 💻 Tech Stack
 
 ### Core Technologies
-- **☕ Java 17+**
-- **🌱 Spring Boot 3.2.0**
+- **Backend Framework**
+    - Java 17+
+    - Spring Boot 3.2.0
     - Spring Data JPA
     - Spring Web MVC
-    - Spring Validation
-- **🐘 PostgreSQL 16**
-- **🔄 MapStruct 1.5.5**
-- **🧪 JUnit 5 & Mockito**
 
-### Development Tools
-- **📦 Maven 3.9.0+**
-- **📚 Swagger/OpenAPI 3.0**
-- **🔍 Lombok**
+- **Database**
+    - PostgreSQL 16.0
 
-## 🔌 API & Documentation
+- **Development Tools**
+    - MapStruct 1.5.5
+    - Lombok
+    - Maven 3.9.0+
+    - Swagger/OpenAPI 3.0
 
-### REST Endpoints
+## 📚 API Documentation
 
-#### 📋 Subject Management
+### Key Endpoints
+
+#### Subject Management
 ```http
-GET    /api/v1/subjects          # Retrieve all subjects
-GET    /api/v1/subjects/{id}     # Get subject by ID
-POST   /api/v1/subjects          # Create new subject
+GET    /api/v1/subjects          # List all subjects
+POST   /api/v1/subjects          # Create subject
+GET    /api/v1/subjects/{id}     # Get subject details
 PUT    /api/v1/subjects/{id}     # Update subject
 DELETE /api/v1/subjects/{id}     # Remove subject
 ```
 
-#### 📊 Survey Operations
+#### Survey Operations
 ```http
 GET    /api/v1/surveys           # List all surveys
-GET    /api/v1/surveys/{id}      # Get survey details
 POST   /api/v1/surveys           # Create survey
+GET    /api/v1/surveys/{id}      # Get survey details
 PUT    /api/v1/surveys/{id}      # Update survey
 DELETE /api/v1/surveys/{id}      # Delete survey
 ```
 
-> 📘 **Interactive API Documentation**: Available at `http://localhost:8080/swagger-ui.html`
-
-## ⭐ Key Features
-
-- 📊 **Advanced Survey Management**
-    - Multi-version support
-    - Real-time updates
-    - Data validation
-
-- 🌳 **Hierarchical Subject System**
-    - Dynamic relationships
-    - Custom categorization
-    - Recursive queries
-
-- 🔒 **Security & Integration**
-    - RESTful architecture
-    - Input validation
-    - Error handling
+> 📖 **Full API Documentation**: Access our interactive API documentation at `http://localhost:8080/swagger-ui.html`
 
 ## 🚀 Getting Started
 
-### System Requirements
+### Prerequisites
+- Java 17 or higher
+- Maven 3.9.0+
+- PostgreSQL 16
+- Your favorite IDE (IntelliJ IDEA recommended)
 
-- ☕ Java 17 or newer
-- 📦 Maven 3.9.0+
-- 🐘 PostgreSQL 16
-- 💻 IDE (IntelliJ IDEA recommended)
+### Installation
 
-### Setup Instructions
+1. **Clone the Repository**
+```bash
+git clone https://github.com/ouchin55edcx/ITlens.git
+cd ITlens
+```
 
-1. **Clone Repository**
-   ```bash
-   git clone https://github.com/ouchin55edcx/ITlens.git
-   cd ITlens
-   ```
+2. **Configure Database**
+```properties
+# src/main/resources/application.properties
+spring.datasource.url=jdbc:postgresql://localhost:5432/itlens
+spring.datasource.username=postgres
+spring.datasource.password=admin
+spring.jpa.hibernate.ddl-auto=update
+```
 
-2. **Database Configuration**
-   ```properties
-   # application.properties
-   spring.datasource.url=jdbc:postgresql://localhost:5432/itlens
-   spring.datasource.username=postgres
-   spring.datasource.password=admin
-   spring.jpa.hibernate.ddl-auto=update
-   ```
+3. **Build and Run**
+```bash
+# Build the project
+mvn clean install
 
-3. **Build & Launch**
-   ```bash
-   mvn clean install
-   mvn spring-boot:run
-   ```
+# Start the application
+mvn spring-boot:run
+```
 
 4. **Verify Installation**
-   ```bash
-   curl http://localhost:8080/api/v1/health
-   ```
+```bash
+curl http://localhost:8080/api/v1/health
+```
+
+## 📦 Class Diagram
+![Class Diagram](docs/img.png)
+
+## 🤝 Contributing
+
+Contributions are what make the open source community an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
 <div align="center">
 
-Developed with ❤️ by [ouchin55edcx](https://github.com/ouchin55edcx)
+Created with ❤️ by [ouchin55edcx](https://github.com/ouchin55edcx)
 
 </div>
